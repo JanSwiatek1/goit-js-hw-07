@@ -12,7 +12,9 @@ gallery.insertAdjacentHTML('beforeend', markup);
 
 const lightbox = new SimpleLightbox(".gallery a", {
     captionsData: "alt",
-    close: true,
+    fadeSpeed: 500,
+    scrollZoom: true,
+    maxZoom: 2,
 });
 
 
