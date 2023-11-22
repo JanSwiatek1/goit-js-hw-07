@@ -15,6 +15,7 @@ const lightbox = new SimpleLightbox(".gallery a", {
     fadeSpeed: 500,
     scrollZoom: true,
     maxZoom: 2,
+    captionDelay: 250,
 });
 
 
