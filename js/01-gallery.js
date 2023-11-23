@@ -3,7 +3,6 @@ import { galleryItems } from './gallery-items.js';
 const gallery = document.querySelector("ul.gallery");
 
 
-// const markup = galleryItems.map((image) => `<div><a href="${image.preview}"><img src="${image.preview}" alt="${image.description}"/></a></div>`).join("");
 const markup = galleryItems.map((image) => `<div class="gallery__item">
   <a class="gallery__link" href="${image.original}">
     <img
@@ -15,8 +14,6 @@ const markup = galleryItems.map((image) => `<div class="gallery__item">
   </a>
 </div>`).join("");
 gallery.insertAdjacentHTML('beforeend', markup);
-// button.addEventListener("click", selestedImage);
-
 
 gallery.onclick = (event) => {
   if (event.target.nodeName !== "IMG") {
@@ -29,9 +26,7 @@ gallery.onclick = (event) => {
   }
 
   const instance = basicLightbox.create(
-    `
-		<img width="1200" src= ${event.target.dataset.source}>
-	`,
+    `<img width="1200" src= ${event.target.dataset.source}>`,
     {
       onShow: () => window.addEventListener("keydown", onEscape),
       onClose: () => window.removeEventListener("keydown", onEscape),
